@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Fundamentals Summary</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .section {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .section:hover {
+            transform: scale(1.01);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            padding-left: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .img-box {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .img-box img {
+            width: 70%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            background: #2c3e50;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Search bar */
+        #searchBar {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: 1px solid #bbb;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Database Fundamentals</h1>
+</header>
+
+<!-- Search bar -->
+<input type="text" id="searchBar" placeholder="Search topics...">
+
+<div class="container">
+
+    <div class="section">
+        <h2>What Is a Database? ▼</h2>
+        <div class="content">
+
+            <div class="img-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/2965/2965335.png" alt="Database Icon">
+            </div>
+
+            <p>
+                A database is a structured collection of data with internal links that make information accessible 
+                from many perspectives. This is different from a traditional flat file, which stores information 
+                in only one single view.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Why Database Systems Are Important ▼</h2>
+        <div class="content">
+
+            <div class="img-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="System Integration">
+            </div>
+
+            <ul>
+                <li>Integrate data across departments (payroll, inventory, personnel, sales).</li>
+                <li>Reduce duplication and inconsistency.</li>
+                <li>Allow organizations to analyze large amounts of information efficiently.</li>
+                <li>Support decision-making through data mining and reporting.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Real-World Impact ▼</h2>
+        <div class="content">
+
+            <div class="img-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/696/696476.png" alt="Internet & Databases">
+            </div>
+
+            <p>
+                Modern websites like Google, Amazon, and eBay rely heavily on database systems to deliver 
+                fast, personalized, and relevant information to users.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Database Fundamentals Summary
+</footer>
+
+<script>
+    // Expand/Collapse Sections
+    document.querySelectorAll(".section").forEach(section => {
+        section.addEventListener("click", () => {
+            const content = section.querySelector(".content");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+    });
+
+    // Search Filter
+    document.getElementById("searchBar").addEventListener("input", function () {
+        const searchText = this.value.toLowerCase();
+        document.querySelectorAll(".section").forEach(sec => {
+            const title = sec.querySelector("h2").innerText.toLowerCase();
+            sec.style.display = title.includes(searchText) ? "block" : "none";
+        });
+    });
+</script>
+
+</body>
+</html>
+
